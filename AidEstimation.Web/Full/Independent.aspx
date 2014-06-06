@@ -33,7 +33,7 @@
                 <li>
                     <fieldset>
                         <legend>Marital Status</legend>
-                        <asp:RadioButtonList runat="server" ID="inputMaritalStatus" RepeatLayout="UnorderedList" CssClass="radio-input-list">
+                        <asp:RadioButtonList runat="server" ID="inputMaritalStatus" CssClass="radio-input-list">
                             <asp:ListItem Value="single">Single/Separated/Divorced</asp:ListItem>
                             <asp:ListItem Value="married">Married/Remarried</asp:ListItem>
                         </asp:RadioButtonList>
@@ -42,7 +42,7 @@
                 <li>
                     <fieldset>
                         <legend>Did the Student Work?</legend>
-                        <asp:RadioButtonList runat="server" ID="inputStudentWorking" RepeatLayout="UnorderedList" CssClass="radio-input-list">
+                        <asp:RadioButtonList runat="server" ID="inputStudentWorking" CssClass="radio-input-list">
                             <asp:ListItem Value="true">Yes, I worked</asp:ListItem>
                             <asp:ListItem Value="false">No, I did <em>not</em> work</asp:ListItem>
                         </asp:RadioButtonList>
@@ -56,7 +56,7 @@
                     <fieldset>
                         <legend>Did the Spouse Work?</legend>
                         
-                        <asp:RadioButtonList runat="server" ID="inputSpouseWorking" RepeatLayout="UnorderedList" CssClass="radio-input-list">
+                        <asp:RadioButtonList runat="server" ID="inputSpouseWorking" CssClass="radio-input-list">
                             <asp:ListItem Value="true">Yes, my Spouse worked</asp:ListItem>
                             <asp:ListItem Value="false">No, my Spouse did <em>not</em> work</asp:ListItem>
                         </asp:RadioButtonList>
@@ -74,7 +74,7 @@
                     <fieldset>
                         <legend>Did the Student and Spouse File Taxes?</legend>
                         
-                        <asp:RadioButtonList runat="server" ID="inputStudentTaxFiler" RepeatLayout="UnorderedList" CssClass="radio-input-list">
+                        <asp:RadioButtonList runat="server" ID="inputStudentTaxFiler" CssClass="radio-input-list">
                             <asp:ListItem Value="true">Yes, we filed taxes</asp:ListItem>
                             <asp:ListItem Value="false">No, we did <em>not</em> files taxes</asp:ListItem>
                         </asp:RadioButtonList>
@@ -111,7 +111,7 @@
                     <fieldset>
                         <legend>Student has Dependents</legend>
                         
-                        <asp:RadioButtonList runat="server" ID="inputHasDependents" RepeatLayout="UnorderedList" CssClass="radio-input-list">
+                        <asp:RadioButtonList runat="server" ID="inputHasDependents" CssClass="radio-input-list">
                             <asp:ListItem Value="true">Yes, I have dependents</asp:ListItem>
                             <asp:ListItem Value="false">No, I do <em>not</em> have dependents</asp:ListItem>
                         </asp:RadioButtonList>

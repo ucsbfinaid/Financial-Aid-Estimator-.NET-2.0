@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Linq;
 using Ucsb.Sa.FinAid.AidEstimation.EfcCalculation;
 using Ucsb.Sa.FinAid.AidEstimation.EfcCalculation.Arguments;
 using Ucsb.Sa.FinAid.AidEstimation.Utility;
@@ -57,7 +56,7 @@ namespace Ucsb.Sa.FinAid.AidEstimation.Web.Full
                 DependentEfcCalculatorArguments args = validator.ValidateDependentEfcCalculatorArguments(rawArgs);
 
                 // If validation fails, display errors
-                if (validator.Errors.Any())
+                if (validator.Errors.Count > 0)
                 {
                     errorList.DataSource = validator.Errors;
                     errorList.DataBind();

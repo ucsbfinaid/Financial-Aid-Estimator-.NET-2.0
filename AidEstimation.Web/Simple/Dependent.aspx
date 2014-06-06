@@ -29,7 +29,7 @@
                 <li>
                     <fieldset>
                         <legend>Parent(s)' Marital Status</legend>
-                        <asp:RadioButtonList runat="server" ID="inputMaritalStatus" RepeatLayout="UnorderedList" CssClass="radio-input-list">
+                        <asp:RadioButtonList runat="server" ID="inputMaritalStatus" RepeatLayout="Flow" CssClass="radio-input-list">
                             <asp:ListItem Value="single">Single/Separated/Divorced</asp:ListItem>
                             <asp:ListItem Value="married">Married/Remarried</asp:ListItem>
                         </asp:RadioButtonList>
@@ -52,7 +52,7 @@
                 <li>
                     <fieldset>
                         <legend>Parent(s)' Income Earned By</legend>
-                        <asp:RadioButtonList runat="server" ID="inputParentIncomeEarnedBy" RepeatLayout="UnorderedList" CssClass="radio-input-list">
+                        <asp:RadioButtonList runat="server" ID="inputParentIncomeEarnedBy" RepeatLayout="Flow" CssClass="radio-input-list">
                             <asp:ListItem Value="none">Neither Parents</asp:ListItem>
                             <asp:ListItem Value="one">One Parent</asp:ListItem>
                             <asp:ListItem Value="both">Both Parents</asp:ListItem>

@@ -29,7 +29,7 @@
                 <li>
                     <fieldset>
                         <legend>Marital Status</legend>
-                        <asp:RadioButtonList runat="server" ID="inputMaritalStatus" RepeatLayout="UnorderedList" CssClass="radio-input-list">
+                        <asp:RadioButtonList runat="server" ID="inputMaritalStatus" CssClass="radio-input-list">
                             <asp:ListItem Value="single">Single/Separated/Divorced</asp:ListItem>
                             <asp:ListItem Value="married">Married/Remarried</asp:ListItem>
                         </asp:RadioButtonList>
@@ -49,7 +49,7 @@
                 <li>
                     <fieldset>
                         <legend>Total Income Earned By</legend>
-                        <asp:RadioButtonList runat="server" ID="inputStudentIncomeEarnedBy" RepeatLayout="UnorderedList" CssClass="radio-input-list">
+                        <asp:RadioButtonList runat="server" ID="inputStudentIncomeEarnedBy" CssClass="radio-input-list">
                             <asp:ListItem Value="none">Neither Student nor Spouse</asp:ListItem>
                             <asp:ListItem Value="one">Either Student or Spouse</asp:ListItem>
                             <asp:ListItem Value="both">Both Student and Spouse</asp:ListItem>
@@ -158,7 +158,7 @@
                 <li>
                     <fieldset>
                         <legend>Student Has Dependents</legend>
-                        <asp:RadioButtonList runat="server" ID="inputHasDependents" RepeatLayout="UnorderedList" CssClass="radio-input-list">
+                        <asp:RadioButtonList runat="server" ID="inputHasDependents" CssClass="radio-input-list">
                             <asp:ListItem Value="true">Yes, I have dependents</asp:ListItem>
                             <asp:ListItem Value="false">No, I do not have dependents</asp:ListItem>
                         </asp:RadioButtonList>
