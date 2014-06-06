@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using Ucsb.Sa.FinAid.AidEstimation.EfcCalculation;
 using Ucsb.Sa.FinAid.AidEstimation.EfcCalculation.Arguments;
 
@@ -292,7 +291,7 @@ namespace Ucsb.Sa.FinAid.AidEstimation.Utility
                     LabelMonthsOfEnrollment,
                     ParamMonthsOfEnrollment);
 
-            if (_validator.Errors.Any())
+            if (_validator.Errors.Count > 0)
             {
                 return null;
             }
@@ -514,7 +513,7 @@ namespace Ucsb.Sa.FinAid.AidEstimation.Utility
                         LabelMonthsOfEnrollment,
                         ParamMonthsOfEnrollment);
 
-            if (_validator.Errors.Any())
+            if (_validator.Errors.Count > 0)
             {
                 return null;
             }

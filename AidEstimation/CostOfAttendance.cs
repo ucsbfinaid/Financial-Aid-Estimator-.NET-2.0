@@ -1,6 +1,4 @@
 ﻿using System.Collections.Generic;
-using System.Linq;
-
 namespace Ucsb.Sa.FinAid.AidEstimation
 {
     public class CostOfAttendance
@@ -24,7 +22,14 @@ namespace Ucsb.Sa.FinAid.AidEstimation
         {
             get
             {
-                return Items.Sum(item => item.Value);
+                double total = 0;
+
+                foreach (CostOfAttendanceItem item in Items)
+                {
+                    total += item.Value;
+                }
+
+                return total;
             }
         }
 

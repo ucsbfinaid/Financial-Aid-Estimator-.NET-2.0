@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using Ucsb.Sa.FinAid.AidEstimation.EfcCalculation.Constants;
 
 namespace Ucsb.Sa.FinAid.AidEstimation.EfcCalculation
@@ -55,9 +54,13 @@ namespace Ucsb.Sa.FinAid.AidEstimation.EfcCalculation
             totalAllowances += CalculateStateTaxAllowance(role, stateOfResidency, totalIncome);
 
             // Social Security Tax
-            totalAllowances += employablePersons
-                                    .Where(person => person.IsWorking)
-                                    .Sum(person => CalculateSocialSecurityTaxAllowance(person.WorkIncome));
+            foreach (HouseholdMember person in employablePersons)
+            {
+                if (person.IsWorking)
+                {
+                    totalAllowances += CalculateSocialSecurityTaxAllowance(person.WorkIncome);
+                }
+            }
 
             // Employment Expense Allowance
             if (role != EfcCalculationRole.DependentStudent)
@@ -261,7 +264,7 @@ namespace Ucsb.Sa.FinAid.AidEstimation.EfcCalculation
             List<HouseholdMember> employablePersons)
         {
             if (employablePersons == null
-                || !employablePersons.Any()
+                || employablePersons.Count == 0
                 || (role == EfcCalculationRole.DependentStudent)
                 || (role == EfcCalculationRole.IndependentStudentWithoutDependents
                         && maritalStatus == MaritalStatus.SingleSeparatedDivorced))
@@ -269,19 +272,34 @@ namespace Ucsb.Sa.FinAid.AidEstimation.EfcCalculation
                 return 0;
             }
 
-            IEnumerable<HouseholdMember> incomeEarners
-                = employablePersons
-                    .Where(ep => ep.IsWorking)
-                    .OrderBy(ie => ie.WorkIncome);
+            // Create a list of working Household Members
+            List<HouseholdMember> incomeEarners = new List<HouseholdMember>();
+
+            foreach (HouseholdMember person in employablePersons)
+            {
+                if (person.IsWorking)
+                {
+                    incomeEarners.Add(person);
+                }
+            }
 
             // Not all of the employable persons are working
-            if (incomeEarners.Count() != employablePersons.Count())
+            if (incomeEarners.Count != employablePersons.Count)
             {
                 return 0;
             }
 
+            HouseholdMember lowestIncomeEarner = incomeEarners[0];
+            foreach (HouseholdMember person in incomeEarners)
+            {
+                if (person.WorkIncome < lowestIncomeEarner.WorkIncome)
+                {
+                    lowestIncomeEarner = person;
+                }
+            }
+
             // Use the lesser of the incomes for the calculation
-            double lowestIncome = incomeEarners.First().WorkIncome;
+            double lowestIncome = lowestIncomeEarner.WorkIncome;
             double adjustedLowestIncome = (lowestIncome * _constants.EmploymentExpensePercent);
 
             double employmentExpenseAllowance = adjustedLowestIncome > _constants.EmploymentExpenseMaximum
