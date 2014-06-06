@@ -1,18 +1,9 @@
-# Financial Aid Estimator (.NET)
+# Financial Aid Estimator (.NET 2.0)
 
-Open-source .NET Financial Aid Estimator, including an implementation of the Federal Expected Family Contribution
-(EFC) formula.
+A port of the [.NET Financial Aid Estimator](https://github.com/ucsbfinaid/Financial-Aid-Estimator-.NET/)
+for .NET 2.0.
 
-To get started, read the
-[Getting Started guide](https://github.com/ucsbfinaid/Financial-Aid-Estimator-.NET/wiki/Getting-Started).
-
-Given the variation in how each university calculates financial aid eligibility, this project does not directly
-include logic for estimating financial aid at a particular university. Instead, the .NET Financial Aid Estimator
-provides tools to _support_ creating a financial aid estimator specific to each institution's financial aid
-methodology.
-
-For more information about the features and capabilities of this project, read the
-[wiki documentation](https://github.com/ucsbfinaid/Financial-Aid-Estimator-.NET/wiki).
+**It is not recommended that you use this version of the .NET Financial Aid Estimator.**
 
 ## Copyright
 
